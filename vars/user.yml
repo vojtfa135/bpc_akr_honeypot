@@ -1,0 +1,2 @@
+user: honey
+venv_path: "/home/{{ user }}/venv"

@@ -3,6 +3,9 @@
   hosts: localhost
 
   tasks:
+  - name: Include vars
+    include_vars: ../vars/user.yml
+
   - name: Install required apt packages
     apt:
       name: "{{ item }}"
@@ -13,10 +16,10 @@
 
   - name: Create a Python3 virtual environment
     command:
-      cmd: virtualenv -p python3 /home/honey/venv
-      creates: "/home/honey/venv"
+      cmd: virtualenv -p python3 "{{ venv_path}}"
+      creates: "{{ venv_path}}"
 
   - name: Install specified Python packages
     pip:
       name: opencanary
-      virtualenv: /home/honey/venv
+      virtualenv: "{{ venv_path }}"
