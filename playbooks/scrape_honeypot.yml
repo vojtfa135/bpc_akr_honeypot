@@ -1,0 +1,27 @@
+---
+- name: Scrape OpenCanary honeypot
+  hosts: localhost
+
+  tasks:
+  - name: Include variables
+    include_vars: ../vars/user.yml
+
+  - name: Deactivate venv
+    script:
+      cmd: ../helper_scripts/deactivate.sh "{{ user }}"
+
+  - name: Uninstall required apt packages
+    apt:
+      name: "{{ item }}"
+      state: absent
+    loop:
+      - python3-pip
+      - virtualenv
+
+  - name: Remove OpenCanary directories and files
+    file:
+      path: "{{ item }}"
+      state: absent
+    loop:
+      - "{{ venv_path }}"
+      - /etc/opencanaryd
