@@ -3,8 +3,11 @@
   hosts: localhost
 
   tasks:
-  - name: Include secrets
-    include_vars: ../secrets/mail_secret.yml
+  - name: Include variables
+    include_vars: "{{ item }}"
+    loop:
+      - ../secrets/mail_secret.yml
+      - ../vars/user.yml
 
   - name: Create /etc/opencanary directory
     file:
@@ -22,5 +25,5 @@
 
   - name: Start OpenCanary daemon
     script:
-      cmd: ../activate.sh
+      cmd: ../activate.sh "{{ user }}"
 

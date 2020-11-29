@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER="honey"
+USER=$1
 
 source /home/${USER}/venv/bin/activate
 opencanaryd --stop
