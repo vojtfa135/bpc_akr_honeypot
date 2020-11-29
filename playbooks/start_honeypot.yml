@@ -25,5 +25,5 @@
 
   - name: Start OpenCanary daemon
     script:
-      cmd: ../helper_scripts/activate.sh "{{ user }}"
+      cmd: ../helper_scripts/activate.sh "{{ venv_path }}"
 

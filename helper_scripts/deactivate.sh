@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USER=$1
+VENV_PATH=$1
 
-source /home/${USER}/venv/bin/activate
+source ${VENV_PATH}/bin/activate
 opencanaryd --stop
 deactivate
