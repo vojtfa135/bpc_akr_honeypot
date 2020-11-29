@@ -16,8 +16,8 @@
 
   - name: Create a Python3 virtual environment
     command:
-      cmd: virtualenv -p python3 "{{ venv_path}}"
-      creates: "{{ venv_path}}"
+      cmd: virtualenv -p python3 "{{ venv_path }}"
+      creates: "{{ venv_path }}"
 
   - name: Install specified Python packages
     pip:
