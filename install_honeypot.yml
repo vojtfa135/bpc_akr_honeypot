@@ -1,0 +1,22 @@
+---
+- name: Install Opencanary honeypot on Kali Linux
+  hosts: localhost
+
+  tasks:
+  - name: Install required apt packages
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - python3-pip
+      - virtualenv
+
+  - name: Create a Python3 virtual environment
+    command:
+      cmd: virtualenv -p python3 /home/honey/venv
+      creates: "/home/honey/venv"
+
+  - name: Install specified Python packages
+    pip:
+      name: opencanary
+      virtualenv: /home/honey/venv
