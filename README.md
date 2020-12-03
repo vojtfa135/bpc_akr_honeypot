@@ -12,7 +12,7 @@ This script requires 3 arguments - the name of your gmail account, password to y
 This is how you call the script: </br>
 ![alt text](imgs/call_sh.png)
 After that you are prompted to give a password for Ansible Vault encryption of the mail_secret.yml file. </br>
-![alt text](imgs/enter.png)
+![alt text](imgs/enter.png) </br>
 And finally just re-enter you chosen Ansible Vault password. </br>
 ![alt text](imgs/re-enter.png)
 ### 2) Deploy OpenCanary honeypot
