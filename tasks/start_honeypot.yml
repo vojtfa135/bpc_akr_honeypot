@@ -7,7 +7,7 @@
 
 - name: Generate a OpenCanary conf file
   template:
-    src: ../opencanary.conf.j2
+    src: ../templates/opencanary.conf.j2
     dest: /etc/opencanaryd/opencanary.conf
     owner: honey
     group: honey

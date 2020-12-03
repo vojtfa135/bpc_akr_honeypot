@@ -3,8 +3,6 @@
 MAIL_USER=$1
 MAIL_PASSWD=$2
 MAIL_TO=$3
-VAULT_PASSWD=$4
-
 USER=$(python3 -c "import getpass; print(getpass.getuser())")
 
 cat > vars/user.yml <<EOF
