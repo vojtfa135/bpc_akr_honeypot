@@ -9,8 +9,8 @@
   template:
     src: ../templates/opencanary.conf.j2
     dest: /etc/opencanaryd/opencanary.conf
-    owner: honey
-    group: honey
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: "0644"
 
 - name: Start OpenCanary daemon
