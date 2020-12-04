@@ -1,7 +1,7 @@
 # Ansible Automation For OpenCanary Honeypot Deployment | BPC-AKR project 2020
 
 ## Prerequisites
-* Kali Linux 2020.3, there's problem with the new 2020.4 -> broken repos for Ansible
+* Kali Linux 2020.3, there's a problem with the new 2020.4 -> broken repos for Ansible
 * Ansible
 
 ## How to run
