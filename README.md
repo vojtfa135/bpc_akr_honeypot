@@ -22,7 +22,27 @@ And finally just re-enter your chosen Ansible Vault password. </br>
 ```shell
 Confirm New Vault password: 
 ```
-### 2) Deploy OpenCanary honeypot
+### 2) Service vars
+By default these services are enabled and supported by this repository: ssh, ftp, http, telnet. If you desire to deploy different services, edit the vars/services.yml file to your liking. Just pay attenttion to the OpenCanary documentation because some of the services require a special setup which this repository isn't supporting yet. </br>
+```shell
+enable_ftp: "true"
+enable_ssh: "true"
+enable_http: "true"
+enable_telnet: "true"
+enable_httpproxy: "false"
+enable_portscan: "false"
+enable_mysql: "false"
+enable_redis: "false"
+enable_rdp: "false"
+enable_sip: "false"
+enable_snmp: "false"
+enable_ntp: "false"
+enable_tftp: "false"
+enable_mssql: "false"
+enable_vnc: "false"
+enable_git: "false"
+```
+### 3) Deploy OpenCanary honeypot
 To do that simply follow this picture: </br>
 ```shell
 ./main.sh
