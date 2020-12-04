@@ -43,7 +43,7 @@ enable_vnc: "false"
 enable_git: "false"
 ```
 ### 3) Deploy OpenCanary honeypot
-To do that simply follow this picture: </br>
+To do that simply run the following command: </br>
 ```shell
 ./main.sh
 ```
