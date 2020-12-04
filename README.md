@@ -24,7 +24,7 @@ Confirm New Vault password:
 ```
 ### 2) Service vars
 By default these services are enabled and supported by this repository: ssh, ftp, http, telnet. If you desire to deploy different services, edit the vars/services.yml file to your liking. Just pay attenttion to the OpenCanary documentation because some of the services require a special setup which this repository isn't supporting yet. </br>
-```shell
+```yaml
 enable_ftp: "true"
 enable_ssh: "true"
 enable_http: "true"
