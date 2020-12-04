@@ -9,6 +9,7 @@
 Before running anything, you have to create your own user.yml and mail_secret.yml config files. Don't worry, you don't have to create anything on your own, in order to generate these files, you can use the script called *set_up_vars.sh* that is located in the root directory of this repository. </br>
 #### How to use the *set_up_vars.sh* script
 This script requires 3 arguments - the name of your gmail account, password to your gmail account and an email account that the alert mails should be sent to. </br>
+Please keep in mind, that it is crucial to enter those variables in the exact order as they were stated in the previous sentence. </br>
 This is how you call the script: </br>
 ```shell
 ./set_up_vars.sh example@gmail.com example_passwd to@gmail.com
