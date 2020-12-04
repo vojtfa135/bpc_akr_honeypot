@@ -8,6 +8,7 @@
     loop:
       - secrets/mail_secret.yml
       - vars/user.yml
+      - vars/services.yml
 
   - name: Install OpenCanary
     import_tasks: tasks/install_honeypot.yml

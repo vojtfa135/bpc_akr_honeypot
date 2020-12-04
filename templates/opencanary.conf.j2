@@ -1,12 +1,12 @@
 {
     "device.node_id": "opencanary-1",
-    "git.enabled": false,
+    "git.enabled": {{ enable_git }},
     "git.port" : 9418,
-    "ftp.enabled": true,
+    "ftp.enabled": {{ enable_ftp }},
     "ftp.port": 21,
     "ftp.banner": "FTP server ready",
     "http.banner": "Apache/2.2.22 (Ubuntu)",
-    "http.enabled": false,
+    "http.enabled": {{ enable_http }},
     "http.port": 80,
     "http.skin": "nasLogin",
     "http.skin.list": [
@@ -19,7 +19,7 @@
             "name": "nasLogin"
         }
     ],
-    "httpproxy.enabled" : false,
+    "httpproxy.enabled" : {{ enable_httpproxy }},
     "httpproxy.port": 8080,
     "httpproxy.skin": "squid",
     "httproxy.skin.list": [
@@ -61,30 +61,30 @@
             }
         }
     },
-    "portscan.enabled": false,
+    "portscan.enabled": {{ enable_portscan }},
     "portscan.logfile":"/var/log/kern.log",
     "portscan.synrate": 5,
     "portscan.nmaposrate": 5,
     "portscan.lorate": 3,
     "smb.auditfile": "/var/log/samba-audit.log",
     "smb.enabled": false,
-    "mysql.enabled": false,
+    "mysql.enabled": {{ enable_mysql }},
     "mysql.port": 3306,
     "mysql.banner": "5.5.43-0ubuntu0.14.04.1",
-    "ssh.enabled": true,
+    "ssh.enabled": {{ enable_ssh }},
     "ssh.port": 22,
     "ssh.version": "SSH-2.0-OpenSSH_5.1p1 Debian-4",
-    "redis.enabled": false,
+    "redis.enabled": {{ enable_redis }},
     "redis.port": 6379,
-    "rdp.enabled": false,
+    "rdp.enabled": {{ enable_rdp }},
     "rdp.port": 3389,
-    "sip.enabled": false,
+    "sip.enabled": {{ enable_sip }},
     "sip.port": 5060,
-    "snmp.enabled": false,
+    "snmp.enabled": {{ enable_snmp }},
     "snmp.port": 161,
-    "ntp.enabled": false,
+    "ntp.enabled": {{ enable_ntp }},
     "ntp.port": "123",
-    "tftp.enabled": false,
+    "tftp.enabled": {{ enable_tftp }},
     "tftp.port": 69,
     "tcpbanner.maxnum":10,
     "tcpbanner.enabled": false,
@@ -99,7 +99,7 @@
     "tcpbanner_1.keep_alive_probes": 11,
     "tcpbanner_1.keep_alive_interval":300,
     "tcpbanner_1.keep_alive_idle": 300,
-    "telnet.enabled": false,
+    "telnet.enabled": {{ enable_telnet }},
     "telnet.port": "23",
     "telnet.banner": "",
     "telnet.honeycreds": [
@@ -112,9 +112,9 @@
             "password": "admin1"
         }
     ],
-    "mssql.enabled": false,
+    "mssql.enabled": {{ enable_mssql }},
     "mssql.version": "2012",
     "mssql.port":1433,
-    "vnc.enabled": false,
+    "vnc.enabled": {{ enable_vnc }},
     "vnc.port":5000
 }
