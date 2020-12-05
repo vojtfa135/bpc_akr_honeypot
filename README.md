@@ -3,6 +3,7 @@
 ## Prerequisites
 * Kali Linux 2020.3, there's a problem with the new 2020.4 -> broken repos for Ansible
 * Ansible
+* Python
 
 ## How to run
 ### 1) Set up vars and secrets
