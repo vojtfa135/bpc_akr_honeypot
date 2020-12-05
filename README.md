@@ -50,7 +50,7 @@ To do that make sure to be in the root directory of this repository and simply r
 ```
 After the deployment, the last task of the Ansible playbook will show you what services were enabled during the deployment. </br>
 ```shell
-TASK [Print the to-deploy services] *******************************************************************
+TASK [Print the to-deploy services] ******************************************************************
 changed: [localhost] => (item=enable_ftp)
 changed: [localhost] => (item=enable_ssh)
 changed: [localhost] => (item=enable_http)
