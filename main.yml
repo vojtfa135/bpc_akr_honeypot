@@ -17,4 +17,4 @@
     import_tasks: tasks/start_honeypot.yml
 
   - name: Print what services were deployed
-    import_tasks: taks/print_to_deploy_services.yml
+    import_tasks: tasks/print_to_deploy_services.yml
