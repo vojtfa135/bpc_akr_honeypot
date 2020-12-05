@@ -4,11 +4,11 @@
  
   tasks:
   - name: Include variables
-    include_vars: "{{ item }}"
+    include_vars: "{{ item }}.yml"
     loop:
-      - secrets/mail_secret.yml
-      - vars/user.yml
-      - vars/services.yml
+      - secrets/mail_secret
+      - vars/user
+      - vars/services
 
   - name: Install OpenCanary
     import_tasks: tasks/install_honeypot.yml
