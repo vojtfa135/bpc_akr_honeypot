@@ -1,0 +1,35 @@
+---
+- name: Restart honeypot with the new services
+  hosts: localhost
+  vars:
+    - conf_dest: /etc/opencanaryd/opencanary.conf
+
+  tasks:
+  - name: Load variables
+    include_vars: "{{ item }}.yml"
+    loop:
+      - ../vars/user
+      - ../vars/services
+      - ../secrets/mail_secret
+
+  - name: Fetch PID of the honeypot process
+    shell: "px -aux | grep [o]pencanary | awk '{print $2}'"
+    register: honeypot_pid
+
+  - name: Stop the honeypot process
+    shell: "sudo kill {{ honeypot_pid.stdout }}"
+    when: honeypot_pid.stdout != ""
+
+  - name: Make old config absent
+    file:
+      path: "{{ conf_dest }}"
+      state: absent
+
+  - name: Create a new config file
+    template:
+      src: ../templates/opencanary.conf.j2
+      dest: "{{ conf_dest }}"
+
+  - name: Start OpenCanary daemon
+    script:
+      cmd: ../helper_scripts/activate.sh "{{ venv_path }}"
