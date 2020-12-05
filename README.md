@@ -48,6 +48,14 @@ To do that make sure to be in the root directory of this repository and simply r
 ```shell
 ./main.sh
 ```
+After the deployment, the last task of the Ansible playbook will show you what services were enabled during the deployment. </br>
+```shell
+TASK [Print the to-deploy services] **********************************************************************************************************************************
+changed: [localhost] => (item=enable_ftp)
+changed: [localhost] => (item=enable_ssh)
+changed: [localhost] => (item=enable_http)
+changed: [localhost] => (item=enable_telnet)
+```
 ## How to run with added or removed services without scraping the whole honeypot
 To do that simply use restart_and_deploy.yml playbook located in the playbooks directory. </br>
 ```shell
