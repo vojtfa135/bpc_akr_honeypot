@@ -1,0 +1,18 @@
+---
+  - name: Register services.yml as a dict
+    include_vars: ../vars/services.yml
+    register: services
+
+  - name: Initialize an empty list for the to-deploy services
+    set_fact:
+      to_services: []
+
+  - name: Append the to-deploy services to the list
+    set_fact:
+      to_services: "{{ to_services + [ item.key ] }}"
+    loop: "{{ services['ansible_facts'] | dict2items }}"
+    when: item.value != "false"
+
+  - name: Print the to-deploy services
+    shell: echo "{{ item }}"
+    loop: "{{ to_services }}"
