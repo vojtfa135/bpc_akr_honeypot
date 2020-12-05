@@ -36,3 +36,6 @@
   - name: Start OpenCanary daemon
     script:
       cmd: ../helper_scripts/activate.sh "{{ venv_path }}"
+
+  - name: Print what services were deployed
+    import_tasks: taks/print_to_deploy_services.yml
