@@ -50,5 +50,5 @@ To do that make sure to be in the root directory of this repository and simply r
 ## How to run with added or removed services without scraping the whole honeypot
 To do that simply use restart_and_deploy.yml playbook located in the playbooks directory. </br>
 ```shell
-sudo ansible-playbook --ask-vault-pass playbooks/restard_and_deploy.yml
+sudo ansible-playbook --ask-vault-pass playbooks/restart_and_deploy.yml
 ```
