@@ -52,3 +52,8 @@ To do that simply use restart_and_deploy.yml playbook located in the playbooks d
 ```shell
 sudo ansible-playbook --ask-vault-pass playbooks/restart_and_deploy.yml
 ```
+### What if I want to manually deactivate the honeypot?
+Just run this helper script with path to the virtual environment as an argument. </br>
+```shell
+./helper_scripts/deactivate.sh /home/honey/venv
+```
