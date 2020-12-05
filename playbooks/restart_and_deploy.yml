@@ -13,12 +13,12 @@
       - ../secrets/mail_secret
 
   - name: Fetch PID of the honeypot process
-    shell: "px -aux | grep [o]pencanary | awk '{print $2}'"
+    shell: "ps -aux | grep [o]pencanary | awk '{print $2}'"
     register: honeypot_pid
 
   - name: Stop the honeypot process
     shell: "sudo kill {{ honeypot_pid.stdout }}"
-    when: honeypot_pid.stdout != ""
+    when: honeypot_pid.stdout
 
   - name: Make old config absent
     file:
